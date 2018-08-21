@@ -1,0 +1,62 @@
+[
+  {
+    "version": "1.13",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.13.jar"
+  },
+  {
+    "version": "1.12.2",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.12.2.jar"
+  },
+  {
+    "version": "1.12.1",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.12.1.jar"
+  },
+  {
+    "version": "1.12",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.12.jar"
+  },
+  {
+    "version": "1.11.2",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.11.2.jar"
+  },
+  {
+    "version": "1.11.1",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.11.1.jar"
+  },
+  {
+    "version": "1.11",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.11.1.jarhttps://cdn.getbukkit.org/spigot/spigot-1.11.jar"
+  },
+  {
+    "version": "1.10.2",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.10.2-R0.1-SNAPSHOT-latest.jar"
+  },
+  {
+    "version": "1.10",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.10-R0.1-SNAPSHOT-latest.jar"
+  },
+  {
+    "version": "1.9.4",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.9.4-R0.1-SNAPSHOT-latest.jar"
+  },
+  {
+    "version": "1.9.2",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.9.2-R0.1-SNAPSHOT-latest.jar"
+  },
+  {
+    "version": "1.9",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.9-R0.1-SNAPSHOT-latest.jar"
+  },
+  {
+    "version": "1.8.8",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar"
+  },
+  {
+    "version": "1.8.7",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.8.7-R0.1-SNAPSHOT-latest.jar"
+  },
+  {
+    "version": "1.8.6",
+    "url": "https://cdn.getbukkit.org/spigot/spigot-1.8.6-R0.1-SNAPSHOT-latest.jar"
+  }
+]
