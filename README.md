@@ -1,0 +1,2 @@
+# MRS
+Minecraft Rusty Server
