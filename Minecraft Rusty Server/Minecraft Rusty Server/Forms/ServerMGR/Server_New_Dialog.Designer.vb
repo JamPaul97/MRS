@@ -31,7 +31,7 @@ Partial Class Server_New_Dialog
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtFolder = New System.Windows.Forms.TextBox()
         Me.LabelFolder = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnBrowse = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboMode = New System.Windows.Forms.ComboBox()
         Me.LabelVersion = New System.Windows.Forms.Label()
@@ -49,11 +49,11 @@ Partial Class Server_New_Dialog
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(232, 358)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(232, 297)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(146, 29)
         Me.TableLayoutPanel1.TabIndex = 0
         '
@@ -81,7 +81,7 @@ Partial Class Server_New_Dialog
         Me.LabelHelp1.AutoSize = True
         Me.LabelHelp1.Location = New System.Drawing.Point(22, 9)
         Me.LabelHelp1.Name = "LabelHelp1"
-        Me.LabelHelp1.Size = New System.Drawing.Size(347, 104)
+        Me.LabelHelp1.Size = New System.Drawing.Size(348, 91)
         Me.LabelHelp1.TabIndex = 1
         Me.LabelHelp1.Text = resources.GetString("LabelHelp1.Text")
         '
@@ -105,6 +105,7 @@ Partial Class Server_New_Dialog
         '
         Me.txtFolder.Location = New System.Drawing.Point(25, 188)
         Me.txtFolder.Name = "txtFolder"
+        Me.txtFolder.ReadOnly = True
         Me.txtFolder.Size = New System.Drawing.Size(263, 20)
         Me.txtFolder.TabIndex = 5
         '
@@ -117,14 +118,14 @@ Partial Class Server_New_Dialog
         Me.LabelFolder.TabIndex = 4
         Me.LabelFolder.Text = "Server's Folder"
         '
-        'Button1
+        'btnBrowse
         '
-        Me.Button1.Location = New System.Drawing.Point(294, 185)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Browse"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnBrowse.Location = New System.Drawing.Point(294, 185)
+        Me.btnBrowse.Name = "btnBrowse"
+        Me.btnBrowse.Size = New System.Drawing.Size(75, 23)
+        Me.btnBrowse.TabIndex = 6
+        Me.btnBrowse.Text = "Browse"
+        Me.btnBrowse.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -158,7 +159,6 @@ Partial Class Server_New_Dialog
         '
         Me.ComboVanilla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboVanilla.FormattingEnabled = True
-        Me.ComboVanilla.Items.AddRange(New Object() {"Vanilla", "Spigot", "CraftBukkit"})
         Me.ComboVanilla.Location = New System.Drawing.Point(25, 267)
         Me.ComboVanilla.Name = "ComboVanilla"
         Me.ComboVanilla.Size = New System.Drawing.Size(344, 21)
@@ -168,8 +168,7 @@ Partial Class Server_New_Dialog
         '
         Me.ComboSpigot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboSpigot.FormattingEnabled = True
-        Me.ComboSpigot.Items.AddRange(New Object() {"Vanilla", "Spigot", "CraftBukkit"})
-        Me.ComboSpigot.Location = New System.Drawing.Point(25, 294)
+        Me.ComboSpigot.Location = New System.Drawing.Point(25, 267)
         Me.ComboSpigot.Name = "ComboSpigot"
         Me.ComboSpigot.Size = New System.Drawing.Size(344, 21)
         Me.ComboSpigot.TabIndex = 11
@@ -178,8 +177,7 @@ Partial Class Server_New_Dialog
         '
         Me.ComboCraftBukkit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCraftBukkit.FormattingEnabled = True
-        Me.ComboCraftBukkit.Items.AddRange(New Object() {"Vanilla", "Spigot", "CraftBukkit"})
-        Me.ComboCraftBukkit.Location = New System.Drawing.Point(25, 321)
+        Me.ComboCraftBukkit.Location = New System.Drawing.Point(25, 267)
         Me.ComboCraftBukkit.Name = "ComboCraftBukkit"
         Me.ComboCraftBukkit.Size = New System.Drawing.Size(344, 21)
         Me.ComboCraftBukkit.TabIndex = 12
@@ -190,14 +188,14 @@ Partial Class Server_New_Dialog
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(390, 399)
+        Me.ClientSize = New System.Drawing.Size(390, 338)
         Me.Controls.Add(Me.ComboCraftBukkit)
         Me.Controls.Add(Me.ComboSpigot)
         Me.Controls.Add(Me.ComboVanilla)
         Me.Controls.Add(Me.LabelVersion)
         Me.Controls.Add(Me.ComboMode)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.txtFolder)
         Me.Controls.Add(Me.LabelFolder)
         Me.Controls.Add(Me.txtName)
@@ -224,7 +222,7 @@ Partial Class Server_New_Dialog
     Friend WithEvents txtName As TextBox
     Friend WithEvents txtFolder As TextBox
     Friend WithEvents LabelFolder As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBrowse As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboMode As ComboBox
     Friend WithEvents LabelVersion As Label

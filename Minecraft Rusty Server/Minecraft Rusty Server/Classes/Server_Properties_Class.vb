@@ -1,6 +1,7 @@
-﻿Public Class Server_Properties_Class
+﻿Imports System.IO
+Public Class Server_Properties_Class
 
-    Public Class properties_object
+    <Serializable> Public Class properties_object
         Public Enum _difficulty
             Peaceful = 0
             Easy = 1
@@ -26,34 +27,35 @@
         Public hardcore As Boolean = False
         Public level_name As String = "world"
         Public level_type As String
-        Public max_build_height As Integer = 256
-        Public max_players As Integer = 20
-        Public max_tick_time As Integer = 60000
-        Public max_world_size As Integer = 29999984
+        Public max_build_height As String = 256
+        Public max_players As String = 20
+        Public max_tick_time As String = 60000
+        Public max_world_size As String = 29999984
         Public motd As String = "A Minecraft Server"
-        Public network_compression_threshold As Integer = 256
+        Public network_compression_threshold As String = 256
         Public online_mode As Boolean = True
-        Public op_permission_level As Integer = 4
-        Public player_idle_timeout As Integer = 0
+        Public op_permission_level As String = 4
+        Public player_idle_timeout As String = 0
         Public prevent_proxy_connections As Boolean = False
         Public pvp As Boolean = True
-        Public query_port As Integer = 25565
+        Public query_port As String = 25565
         Public rcon_password As String
+        Public rcon_port As String = 25575
         Public resource_pack As String
         Public resource_pack_sha1 As String
         Public server_ip As String
-        Public server_port As Integer = 25565
+        Public server_port As String = 25565
         Public snooper_enabled As Boolean = True
         Public spawn_animals As Boolean = True
         Public spawn_monsters As Boolean = True
         Public spawn_npcs As Boolean = True
-        Public spawn_protection As Integer = 16
+        Public spawn_protection As String = 16
         Public ReadOnly use_native_transport As Boolean = False
-        Public view_distance As Integer = 10
+        Public view_distance As String = 10
         Public white_list As Boolean = False
         Public enforce_whitelist As Boolean = False
     End Class
-    Public Function getPropertiesFile(ByVal pObject As properties_object)
+    Public Shared Function getPropertiesFile(ByVal pObject As properties_object)
         Dim str As String
         str = "allow-flight=" & pObject.allow_flight & vbNewLine _
         & "allow-nether=" & pObject.allow_nether & vbNewLine _
@@ -96,9 +98,31 @@
         & "white-list=" & pObject.white_list & vbNewLine
         Return (str)
     End Function
-    Public Function getDefaultProperties()
+    Public Shared Function getDefaultProperties()
         Dim temp As New properties_object
-        Dim str = getPropertiesFile(temp)
-        Return (str)
+        Return (temp)
     End Function
+    Public Shared Function getObjectFromFile(ByVal pFile As String)
+        Dim f As Runtime.Serialization.Formatters.Binary.BinaryFormatter
+        Dim s As IO.Stream
+        f = New Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+        s = New IO.FileStream(pFile, IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.None)
+        Dim a = (DirectCast(f.Deserialize(s), Object))
+        s.Close()
+        Return (a)
+    End Function
+    Public Shared Sub savePropertiesObject(ByVal pFile As String, ByVal pClass As properties_object)
+        Dim F As Runtime.Serialization.Formatters.Binary.BinaryFormatter
+        Dim s As IO.Stream
+        F = New Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+        s = New IO.FileStream(pFile, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None)
+        F.Serialize(s, pClass)
+        s.Close()
+    End Sub
+    Public Shared Sub saveSTRtoFile(ByVal pSTR As String, ByVal pFolder As String)
+        If File.Exists(pFolder & "server.properties") Then
+            File.Delete(pFolder & "server.properties")
+        End If
+        File.WriteAllText(pFolder & "server.properties", pSTR)
+    End Sub
 End Class

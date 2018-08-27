@@ -117,13 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LabelHelp1.Text" xml:space="preserve">
-    <value>To create a new server you will have to provide a Server Name that
-will be used as an identifier for the program and for you. The folder for
-the server can be placed anywhere. Click the browse button and create 
-a folder.
-There are 3 mods you can choose from. Vanilla, Spigot, and CraftBukkit.
-Each mode has its own versions. If you don't know what Spigot and 
-CraftBukkit is then we recommend you choose plain old Vanilla.</value>
-  </data>
+  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

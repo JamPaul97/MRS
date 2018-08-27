@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -77,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\File_Manager.vb" />
+    <Compile Include="Classes\Query_Class.vb" />
+    <Compile Include="Classes\Server_Class.vb" />
     <Compile Include="Classes\Server_Manager.vb" />
     <Compile Include="Classes\Server_Properties_Class.vb" />
     <Compile Include="Form1.vb">
@@ -86,10 +91,59 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\MainServer\Banned_Players_Form.Designer.vb">
+      <DependentUpon>Banned_Players_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainServer\Banned_Players_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainServer\Componets\BannedPlayer_Control.Designer.vb">
+      <DependentUpon>BannedPlayer_Control.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainServer\Componets\BannedPlayer_Control.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MainServer\Componets\Whitelist_Control.Designer.vb">
+      <DependentUpon>Whitelist_Control.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainServer\Componets\Whitelist_Control.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MainServer\Ops_Form.Designer.vb">
+      <DependentUpon>Ops_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainServer\Ops_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainServer\Server_Form.Designer.vb">
+      <DependentUpon>Server_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainServer\Server_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainServer\Whitelist_Form.Designer.vb">
+      <DependentUpon>Whitelist_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainServer\Whitelist_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MineStat.vb" />
+    <Compile Include="Forms\Other Forms\DownloadManager.Designer.vb">
+      <DependentUpon>DownloadManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Other Forms\DownloadManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ServerMGR\Server_New_Dialog.Designer.vb">
       <DependentUpon>Server_New_Dialog.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServerMGR\Server_New_Dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServerMGR\Server_Properties_Editor.Designer.vb">
+      <DependentUpon>Server_Properties_Editor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServerMGR\Server_Properties_Editor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,8 +163,35 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainServer\Banned_Players_Form.resx">
+      <DependentUpon>Banned_Players_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainServer\Componets\BannedPlayer_Control.resx">
+      <DependentUpon>BannedPlayer_Control.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainServer\Componets\Whitelist_Control.resx">
+      <DependentUpon>Whitelist_Control.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainServer\Ops_Form.resx">
+      <DependentUpon>Ops_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainServer\Server_Form.resx">
+      <DependentUpon>Server_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainServer\Whitelist_Form.resx">
+      <DependentUpon>Whitelist_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Other Forms\DownloadManager.resx">
+      <DependentUpon>DownloadManager.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ServerMGR\Server_New_Dialog.resx">
       <DependentUpon>Server_New_Dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ServerMGR\Server_Properties_Editor.resx">
+      <DependentUpon>Server_Properties_Editor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -120,6 +201,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
